@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>naber broşŞASDşasdfjlşjaşsjdfşljjşasdf la </title>
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+<body>
+
+<script type="text/javascript">
+	//DERS1
+
+		//dizi  tanımlama örneği 
+	var derslistesi =new Array ("Web Tasarım ve Programlama","Veritabanı","Grafik ve Animasyon");
+	document.write(derslistesi[2]);
+
+
+
+	document.write("<hr color=#f12244 size=3 />"); //bu iki dizi örneği arasına karışmaması için çizgi çekiyoruz.
+
+
+      // Başka bir dizi tanımlama örneği
+
+
+	var programlamadilleri=new Array();
+
+	programlamadilleri[0]="javascript";
+	programlamadilleri[1]="java";
+	programlamadilleri[2]="C#";
+	programlamadilleri[3]="Perl";
+	document.write(programlamadilleri[3]);
+
+	 document.write("<hr />");
+ //DERS2
+	//dizi uzunluğu ve dizi elemanlarını yazdırma
+
+	var diziuzunluguprogramlamadiller=programlamadilleri.length;
+		 document.write(diziuzunluguprogramlamadiller);
+
+ 	document.write("<hr />");
+
+  var diziuzunluguderslistesi=derslistesi.length;
+  document.write(diziuzunluguderslistesi);
+   document.write("<hr/>");
+  //Dizinin tüm elemanlarını yazdırma
+  	for(var i=0;i<programlamadilleri.length;i++)
+  		{	document.write(programlamadilleri[i]);
+  			document.write("<br/>");}
+  		//join metodu ile dizinin tüm elemanlarını yazdırabiliriz.
+  		document.write("<hr color=green size=4 />");
+  		document.write(programlamadilleri.join());
+
+
+  		document.write("<hr color=yellow size=4 />");
+
+  		var birlesmisdizi=programlamadilleri.concat(derslistesi);
+  		document.write(birlesmisdizi.join());
+  		document.write("<br/>");
+  		var tersbirlesmisdizi=birlesmisdizi.reverse();
+  		document.write(tersbirlesmisdizi.join());
+  			</script>
+	</body>
+</html>

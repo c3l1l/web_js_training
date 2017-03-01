@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>javascript</title>
+
+<style type="text/css">
+
+* {cursor:default }
+li { display:inline; width:100px; height:50px; background-color:#FF3366; padding:3px; color:#ffffff; font-weight:bold; }
+li:hover { display:inline; width:100px; height:50px; background-color:#FF33CC; padding:3px; color:#ffffff; font-weight:bold; }
+div.Icerik { width:500px; height:300px; display:none; }
+
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+<!--
+
+function Goster(Kim){
+
+        TumunuYokEt();
+        document.getElementById(Kim).style.display ="block";
+       
+}
+
+function TumunuYokEt(){
+
+        Divler=document.getElementsByTagName("div");
+
+        for(i=0; i<Divler.length; i++){
+       
+                if(Divler[i].className=="Icerik")
+                        Divler[i].style.display ="none";
+        }
+}
+
+//-->
+</script>
+
+<lu>
+        <li onclick="Goster('Icerik1')">Kişisel Bilgiler</li>
+
+        <li onclick="Goster('Icerik2')">İletişim Bilgileri</li>
+        <li onclick="Goster('Icerik3')">Fotograf İşlemleri</li>
+</lu>
+
+<div style="background-color:#CCFF33; display:block;" class="Icerik" id="Icerik1">
+<form>
+
+        <table>
+                <tr><td>Adınız</td><td><input type="text" name="ad" /></td></tr>
+                <tr><td>Adresiniz</td><td><textarea name="adres" style="width:200px; height:100px;"></textarea></td></tr>
+
+                
+        </table>
+</form>
+
+</div>
+
+
+<div style="background-color:#FFCC33" class="Icerik" id="Icerik2">
+<form>
+
+        <table>
+                <tr><td>Telefon</td><td><input type="text" name="telefon" /></td></tr>
+                <tr><td>Email</td><td><input type="text" name="email" /></td></tr>
+
+                
+        </table>
+</form>
+</div>
+
+
+<div style="background-color:#33CCFF" class="Icerik" id="Icerik3">
+<form>
+
+        <table>
+                <tr><td>Resminiz</td><td><input type="file" name="resim" /></td></tr>
+                
+        </table>
+</form>
+
+</div>
+
+</body>
+</html>

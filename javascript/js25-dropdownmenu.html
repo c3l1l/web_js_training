@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style>
+ul#menu {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:10px 0pt 20px;
+padding:0pt;
+}
+ul#menu li {
+background-position:left 50%;
+background-repeat:no-repeat;
+border:1px solid #FFCC33;
+margin-top:-1px;
+position:relative;
+}
+ul#menu ul {
+background-color:#FFD966;
+display:none;
+left:180px;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0pt;
+padding:0pt;
+position:absolute;
+top:0pt;
+width:200px;
+z-index:100;
+}
+ul#menu li.submenu {
+background:transparent url(submenu_arrow.gif) no-repeat scroll right bottom;
+padding:5px;
+}
+ul#menu li.submenu:hover > ul {
+display:block;
+}
+ul#menu a {
+color:#666666;
+display:block;
+padding:5px;
+text-decoration:none;
+}
+ul#menu a:hover, ul#menu li.submenu:hover {
+background-color:#FFCC33;
+cursor:pointer;
+}
+</style>
+<script type="text/javascript">
+<!--
+        window.onload = function ()
+        {
+            OnloadEvents;
+            var li = document.getElementsByTagName('LI'), i;
+            for (i = 0; i < li.length; i++)
+            {
+                var obp = li[i].parentNode;
+                if (obp.id == 'menu2' || obp.parentNode.parentNode.id == 'menu2')
+                {
+                    li[i].onmouseover = function ()
+                    {
+                        MenuRollover(this,'over');
+                    }
+                    li[i].onmouseout = function ()
+                    {
+                        MenuRollover(this,'out');
+                    }
+                }
+            }
+        }
+        
+        function MenuRollover(ob,state)
+        {
+            var vis;
+            switch (state) { 
+                case 'over':
+                    vis = 'block';
+                    break;
+                case 'out':
+                    vis = 'none';
+                    break;
+                default:
+                    break;
+            }
+            for (var i = 0; i < ob.childNodes.length; i++)
+            {
+                if (ob.childNodes[i].nodeName == 'UL') ob.childNodes[i].style.display = vis;
+            }
+        }
+    //-->
+    </script>
+</head>
+
+<body>
+
+<ul id="menu">
+    <li><a href="http://www.amanwithapencil.com/">a man with a pencil</a></li>
+    <li><a href="http://lab.amanwithapencil.com/">lab home page</a></li>
+    <li class="submenu">experiments
+        <ul>
+
+            <li class="submenu">browser bugs
+                <ul>
+                    <li><a href="http://lab.amanwithapencil.com/comment_bug/">conditional comments bug</a></li> 
+                    <li><a href="http://lab.amanwithapencil.com/ff_menu/">Firefox DHTML bug</a></li> 
+                </ul> 
+            </li>
+            <li><a href="http://lab.amanwithapencil.com/centre_page/">centre a page</a></li> 
+            <li class="submenu">cross-browser PNG alpha
+                <ul>
+                    <li><a href="http://lab.amanwithapencil.com/png24/">introduction</a></li>
+
+                    <li><a href="http://lab.amanwithapencil.com/png24/js.html">JavaScript: image swap</a></li>
+                    <li><a href="http://lab.amanwithapencil.com/png24/test.html">JavaScript test page</a></li>
+                    <li><a href="http://lab.amanwithapencil.com/png24/php.html">PHP: targeted content</a></li>
+                    <li><a href="http://lab.amanwithapencil.com/png24/test.php">PHP test page</a></li>
+                    <li><a href="conclusion.html">conclusion</a></li>
+                </ul>
+
+            </li> 
+            <li><a href="http://lab.amanwithapencil.com/ie_png24_opacity/">IE: opacity and image loader filters</a></li> 
+            <li><a href="http://lab.amanwithapencil.com/dynamic_forms/">dynamic form elements</a></li> 
+            <li><a href="http://lab.amanwithapencil.com/tabular_structure/">forms without tables</a></li> 
+            <li><a href="http://lab.amanwithapencil.com/tool_tips/">IE tool tips</a></li> 
+        </ul> 
+    </li>
+    <li class="submenu">musings
+        <ul>
+            <li><a href="http://lab.amanwithapencil.com/blink/">blinkin' Firefox</a></li> 
+        </ul> 
+    </li>
+
+    <li class="submenu">background
+        <ul>
+            <li><a href="http://lab.amanwithapencil.com/user_agent/">browser detection</a></li> 
+            <li><a href="http://lab.amanwithapencil.com/conditional_comments/">conditional comments</a></li>
+            <li><a href="http://lab.amanwithapencil.com/trinity/">trinity</a></li>
+        </ul> 
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>naber broşŞASDşasdfjlşjaşsjdfşljjşasdf la </title>
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+<body>
+
+<script type="text/javascript">
+		
+		var zaman=new Date();
+		document.write(zaman);
+		var saat=zaman.getHours();
+		document.write("<hr/>");
+		document.write(saat);
+		document.write("<hr/>");
+		var dakika=zaman.getMinutes();
+		document.write(dakika);
+
+		zaman.setMinutes(30);
+		document.write(zaman);
+
+
+		function yasKontrol()
+		{	var dogumyili =prompt("Lütfen doğum yılınızı giriniz");
+			var mevcutZaman=new Date();
+			var siniryil=mevcutZaman.getFullYear()-18;
+			if(dogumyili>siniryil)
+				{ alert("Yaşın tutmuyor Büyüde gel koçum...");
+
+			}
+			else { alert("Hoşgeldiniz Siteye Yönlendiriliyorsunuz.");}
+ 
+		}
+		 		yasKontrol(); //fonksiyon çağrıldı Türkçesi çalıştı...
+</script>
+		
+	</body>
+</html>

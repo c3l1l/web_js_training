@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Başlık </title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+<body  >
+
+<form name="kullanici_girisi">
+<fieldset><legend>Anket Alanı</legend>
+	<input type="text" name=""  value="Kullanici Adi"/>
+	<input type="passwd" name="" value="Parola" />
+	<input type="button" name="" value="Gonder" />
+	</fieldset>
+</form>
+<br/>
+<br/>
+<br/>
+<form name="tercih">
+<fieldset><legend>Tercihler</legend>
+	<input type="radio" checked="checked" name="tercih" value="Web" />Web Teknolojileri
+	<input type="radio" name="tercih" value="db" />Veritabanı
+	<input type="radio" name="tercih" value="grafik" />Grafik Tasarım
+</fieldset>
+</form>
+
+<script type="text/javascript">
+	var x=document.forms[0].length;
+	document.writeln(x);
+	//document.write("<hr size=5 color=green />");
+	var y=document.forms[1].elements[3].value;
+	document.writeln(y);
+	var z=document.tercih.elements[2].value;//forms[1]  index bilgisi yerine form name kullanılabilir.
+	document.write(z);
+	</script>
+
+	</body>
+</html>

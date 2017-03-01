@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Dersleri</title>
+</head>
+<body>
+<script type="text/javascript">
+	//javascript döngü fonksiyonları;
+	function function1(sayac1)
+	{ 
+		document.write("birinci fonksiyon"+sayac1+".defa çağrıldı."); 
+		function2(sayac1);
+	}
+
+	function function2(sayac2)
+	{ 	
+		document.write("ikinci fonksiyon"+sayac2+".defa çağrıldı.");   
+			sayac2++;
+		function1(sayac2);
+	}
+
+	function1(1);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Akordion Menu</title>
+	<style type="text/css">
+	 	.btn{
+	 		color: #224059;
+    background-color: #b5c9e2;
+    border-top: 2px #cce3ff solid;
+    border-left: 2px #cce3ff solid;
+    border-bottom: 2px #31557f solid;
+    border-right: 2px #31557f solid;
+    font:bold 12px Arial, Helvetica, sans-serif;
+    width:400px;
+    height: 40px;
+	 	}
+		.mydiv
+		{
+			transition: all 1s;
+			background:cornflowerblue;
+			color:white;
+			height: 0px;
+			width: 400px;
+			text-align: justify; /*Metnin sağ tarafındaki boşlukları doldurur.*/
+			border-radius: 5px;
+			overflow: hidden; /*Belirli yüksekliği geçen yazılar görünmez. auto ile kaydırma çubuğu çıkar.scroll'da ise hem yatay hem dikey scroolbar çıkar.*/
+		}
+		.hide{
+			transition: all 3s;
+			height: 200px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function eylem(a)
+		{
+			document.querySelectorAll(".mydiv")[a].classList.toggle("hide");
+		}
+
+
+	</script>
+</head>
+<body>
+<button onclick="eylem(0)" class="btn">tab1</button>
+<div class="mydiv">Test ljasdlkfjalksjdflkjasdfTest ljasdlkfjalksjdflkjasdfTest ljasdlkfjalksjdflkjasdf</div>
+<button onclick="eylem(1)" class="btn">tab2</button>
+<div class="mydiv">Test1 Test ljasdlkfjalksjdflkjasdfTest ljasdlkfjalksjdflkjasdfTest ljasdlkfjalksjdflkjasdf</div>
+<button onclick="eylem(2)" class="btn">tab3</button>
+<div class="mydiv">Test2 ljasdlkfjalksjdflkjasdfTest ljasdlkfjalksjdflkjasdf</div>
+</body>
+</html>

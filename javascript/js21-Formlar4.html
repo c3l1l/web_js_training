@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Başlık </title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+<body  >
+
+
+<br/>
+<br/>
+<br/>
+<form name="tercih">
+<fieldset><legend>Bilişim Teknolojileri Seçmeli Ders Uygulaması</legend>
+	<input type="checkbox" name="ders" value="Mobil" />Mobil Programlama
+	<input type="checkbox" name="ders" value="Sunucu" />Sunucu İşletim Sistemi
+	<input type="checkbox" name="ders" value="Hukuk" />Bilişim Hukuku
+	<input type="checkbox" name="ders" value="Robotik" />Robotik
+	<input type="checkbox" name="ders" value="Artifical Intelligence" />Yapay Zeka
+	
+	
+</fieldset>
+</form>
+	
+<script type="text/javascript">
+
+function kontrol()
+{
+	var sayac=0;
+	var uzunluk = document.tercih.length;
+	var secilen=new Array();
+	for (var i = 0; i < uzunluk; i++)
+	 {
+
+	 	if(document.tercih.elements[i].checked==true)
+	 		{	secilen.push(document.tercih.elements[i].value);}
+	 	else {  }
+
+	 }
+		alert("Secilen Dersler:"+secilen.join());
+}
+	</script>
+	<input type="button" name="buton1" value="Kontrol"  onclick="kontrol();" />
+
+	</body>
+</html>

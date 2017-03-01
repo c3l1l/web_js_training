@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>naber broşŞASDşasdfjlşjaşsjdfşljjşasdf la </title>
+	<script type="text/javascript">
+		
+
+	</script>
+</head>
+<body>
+
+<script type="text/javascript">
+		
+		second=3599;
+		function kronometre(){
+				var dak=Math.floor(second/60);
+				var saat=Math.floor(dak/60);
+				var dakika=dak%60;
+				var saniye=second%60;
+
+
+			document.write(saat+":"+dakika+":"+saniye);
+			document.write("<br/>");
+			second++;
+
+		}
+		setInterval("kronometre()",1000); //milisaniye cinsinden deger giriniz.
+</script>
+		
+	</body>
+</html>
