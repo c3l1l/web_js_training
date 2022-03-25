@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title class="text-danger">Hello, world!</title>
+    <script type="text/javascript">
+      function ajax(){
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function()
+        {
+          if (xhr.readyState==4 && xhr.status==200) 
+          {
+            //alert(xhr.responseText);
+
+            var _email=document.getElementById("email");
+            var _first_name=document.getElementById("first_name");
+            var _last_name=document.getElementById("last_name");
+            var avatar=document.getElementById("avatar");
+            var strResult=xhr.responseText;
+            //avatar.innerText=strResult;
+            var obj=JSON.parse(strResult);
+            for (var i = 0; i < obj.data.length; i++) {
+              var image=document.createElement("img");
+              image.src=obj.data[i].avatar;
+              avatar.append(image);
+              var email=document.createElement("h6");
+              email.innerText=obj.data[i].email;
+              _email.append(email);
+              var first_name=document.createElement("h6");
+              first_name.innerText=obj.data[i].first_name;
+              _first_name.append(first_name);
+              var last_name=document.createElement("h6");
+              last_name.innerText=obj.data[i].last_name;
+              _last_name.append(last_name);
+
+            }
+          }
+        }
+        xhr.open("GET","https://reqres.in/api/users?page=1",true);
+         xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <h1 class="text-danger">XML HTTP REQUEST!</h1>
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Eposta</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Avatar</th>
+    </tr>
+  </thead>
+  <tbody id="records">
+    
+    <tr>
+      <td id="email"></td>
+      <td id="first_name"></td>
+      <td id="last_name"></td>
+      <td id="avatar"></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<button onclick="ajax()">Ajax Call</button>
+  </body>
+</html>
