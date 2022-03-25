@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS HTML Study</title>
+	<script type="text/javascript">
+		function Control(){
+			var txt=document.getElementById("_name");
+			if (txt.value=="") {
+				var alertfield=document.getElementById("alertfield");
+				alertfield.innerText="This field can not be empty !";
+				txt.style.border="2px solid red";
+				return false;
+			}
+			else
+			 return true;
+		}
+		function add(){
+			var alertfield=document.getElementById("alertfield");
+			var h1=document.createElement("h1");
+			h1.innerText="Dynamic Message";
+			alertfield.append(h1);
+	
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text"  id="_name" />
+		<input type="submit" name="" value="Send" onclick="return Control()" />
+	</form>
+	<div id="alertfield">
+		
+	</div>
+
+	<button onclick="add()">Add Dynamic Message</button>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS AJax</title>
+	<style type="text/css">
+		.box{
+			width: 400px;
+			height: 500px;
+			border: 1px solid #ccc;
+			float: left;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function ajax(){
+					
+
+			var xhr= new XMLHttpRequest();
+
+				xhr.onreadystatechange=function()
+				{
+					if (xhr.readyState==4 && xhr.status==200) 
+					{
+						//alert(xhr.responseText);
+
+						var _email=document.getElementById("email");
+						var _first_name=document.getElementById("first_name");
+						var _last_name=document.getElementById("last_name");
+						var avatar=document.getElementById("avatar");
+						var strResult=xhr.responseText;
+						//avatar.innerText=strResult;
+						var obj=JSON.parse(strResult);
+						for (var i = 0; i < obj.data.length; i++) {
+							var image=document.createElement("img");
+							image.src=obj.data[i].avatar;
+							avatar.append(image);
+							var email=document.createElement("h1");
+							email.innerText=obj.data[i].email;
+							_email.append(email);
+							var first_name=document.createElement("h1");
+							first_name.innerText=obj.data[i].first_name;
+							_first_name.append(first_name);
+							var last_name=document.createElement("h1");
+							last_name.innerText=obj.data[i].last_name;
+							_last_name.append(last_name);
+
+						}
+					}
+				}
+				xhr.open("GET","https://reqres.in/api/users?page=1",true);
+				 xhr.send();
+		}
+
+	</script>
+</head>
+<body>
+	<button onclick="ajax()">Ajax Call</button>
+	<div id="result">
+		<div class="box" id="email"></div>
+		<div class="box" id="first_name"></div>
+		<div class="box" id="last_name"></div>
+		<div class="box" id="avatar"></div>
+
+
+		
+	</div>
+
+</body>
+</html>
